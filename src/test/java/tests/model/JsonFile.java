@@ -17,10 +17,6 @@ public class JsonFile {
         return age;
     }
 
-    public void setAge(String age) {
-        this.age = age;
-    }
-
     public String getSecretIdentity() {
         return secretIdentity;
     }
