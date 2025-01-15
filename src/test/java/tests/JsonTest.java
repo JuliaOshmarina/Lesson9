@@ -16,9 +16,8 @@ public class JsonTest {
 
     @Test
     void jsonFileTest() throws Exception {
-        try (InputStream is = cl.getResourceAsStream("Example.json")) {
-            assert is != null;
-            try (InputStreamReader zf = new InputStreamReader(is)) {
+        try (InputStream is = cl.getResourceAsStream("Example.json");
+             InputStreamReader zf = new InputStreamReader(is)) {
                 JsonFile info = objectMapper.readValue(zf, JsonFile.class);
                 assertThat(info.getName()).isEqualTo("Madame Uppercut");
                 assertThat(info.getAge()).isEqualTo("39");
@@ -27,4 +26,3 @@ public class JsonTest {
             }
         }
         }
-    }

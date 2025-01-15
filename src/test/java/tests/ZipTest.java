@@ -3,11 +3,9 @@ package tests;
 import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
-import org.apache.commons.compress.archivers.zip.ZipFile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -22,7 +20,6 @@ public class ZipTest {
 
     @Test
     void zipTestPdf() throws Exception {
-        ZipFile zf = new ZipFile(new File("src/test/resources/test.zip"));
         ZipInputStream is = new ZipInputStream(cl.getResourceAsStream("test.zip"));
         ZipEntry entry;
         while ((entry = is.getNextEntry()) != null) {
@@ -35,7 +32,6 @@ public class ZipTest {
 
     @Test
     void zipTestXlsx() throws Exception {
-        ZipFile zf = new ZipFile(new File("src/test/resources/test.zip"));
         ZipInputStream is = new ZipInputStream(cl.getResourceAsStream("test.zip"));
         ZipEntry entry;
         while ((entry = is.getNextEntry()) != null) {
@@ -49,7 +45,6 @@ public class ZipTest {
 
     @Test
     void zipTestCsv() throws Exception {
-        ZipFile zf = new ZipFile(new File("src/test/resources/test.zip"));
         ZipInputStream is = new ZipInputStream(cl.getResourceAsStream("test.zip"));
         ZipEntry entry;
         while ((entry = is.getNextEntry()) != null) {
